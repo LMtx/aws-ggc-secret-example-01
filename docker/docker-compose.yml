@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  edge_device:
+    init: true
+    image: amazon/aws-iot-greengrass:1.10.2-alpine-x86-64
+    container_name: ggc_device
+    volumes:
+      - ./certs:/greengrass/certs
+      - ./config:/greengrass/config
+    ports:
+      - "8883:8883"
+    entrypoint: "/greengrass-entrypoint.sh"
+    networks:
+      - public
+      - private
+  db:
+    image: mysql:8.0.21
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: some_pass
+    networks:
+      - private
+networks:
+  public: 
+    driver: bridge
+  private:
+    driver: bridge
+    internal: true
+
+
+
+

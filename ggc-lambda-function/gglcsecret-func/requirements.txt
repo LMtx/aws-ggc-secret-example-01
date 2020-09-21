@@ -1,0 +1,3 @@
+requests
+greengrasssdk
+mysql-connector-python
