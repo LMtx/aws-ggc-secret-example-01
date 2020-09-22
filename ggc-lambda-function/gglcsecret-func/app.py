@@ -10,7 +10,6 @@ def lambda_handler(event, context):
 
     resp = ''
     try:
-        # receive secret from Secrets Manager
         resp = sm_client.get_secret_value(SecretId='greengrass-local-db')
         secret = resp.get('SecretString')
     except Exception as e:
