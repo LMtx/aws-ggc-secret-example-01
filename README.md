@@ -85,7 +85,7 @@ Lambda function is going to be invoked by sending a message to `sql/req` topic a
 
 ![](img/ggc_mqtt_01.png)
 
-Disclaimer: in actual solution this might or might not be the desired implementation - I used MQTT topics clearly to present the end to end flow of data.
+Disclaimer: in actual solution this might or might not be the desired implementation - I used MQTT topics to clearly present the end to end flow of data.
 
 # Summary
 
